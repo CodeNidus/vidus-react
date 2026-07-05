@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import vidus from '../../vidus-core';
+import vidus from 'vidus-core';
 
 const VidusContext = createContext(null);
 
