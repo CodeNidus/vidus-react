@@ -1,0 +1,84 @@
+.video-installation {
+  padding: 10px;
+}
+
+#room-join {
+  width: fit-content;
+  margin: 25px auto;
+}
+
+@media screen and (max-width: 480px) {
+  #room-join {
+    width: auto;
+  }
+}
+
+#room-join .connection-settings {
+  padding: 25px;
+}
+
+@media screen and (max-width: 480px) {
+  #room-join .connection-settings {
+    padding: 0;
+  }
+}
+
+#room-join .connection-settings .text-field input {
+
+}
+
+@media screen and (max-width: 480px) {
+  #room-join .connection-settings .text-field input {
+    min-width: 200px;
+  }
+}
+
+#room-join .info {
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 480px) {
+  #room-join .info {
+    justify-content: space-between;
+  }
+}
+
+#room-join .device-setting {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: end;
+}
+
+#room-join .device-setting button {
+  margin-right: 5px;
+}
+
+#room-join .device-setting button:last-child {
+  margin-right: 0;
+}
+
+#room-join .devices div {
+  margin-bottom: 5px;
+}
+
+#room-join .devices div:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 480px) {
+  #room-join label {
+    width: 80px;
+  }
+}
+
+#room-join .btn-join {
+  margin: 0 0 0 25px;
+}
+
+@media screen and (max-width: 480px) {
+  #room-join .btn-join {
+    margin: 0;
+  }
+}
+

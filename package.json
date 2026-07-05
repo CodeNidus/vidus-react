@@ -1,0 +1,21 @@
+{
+  "name": "vidus-react",
+  "version": "1.0.0",
+  "dependencies": {
+    "@mdi/svg": "^7.4.47",
+    "vidus-core": "^1.1.0",
+    "emoji-picker-react": "^4.16.1"
+  },
+  "description": "Vidus video conference react package",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "video",
+    "conference",
+    "react"
+  ],
+  "author": "Code Nidus",
+  "license": "ISC"
+}

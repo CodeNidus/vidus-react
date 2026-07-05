@@ -1,0 +1,9 @@
+#videoConferenceActions {
+  width: 100%;
+}
+
+#videoConferenceActions .action {
+  position: absolute;
+  z-index: 999;
+}
+

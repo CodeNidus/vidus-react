@@ -1,0 +1,16 @@
+#rooms-section {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+@media screen and (max-width: 480px) {
+  #rooms-section {
+    flex-direction: column;
+  }
+}
+
+.server-error {
+  color: red;
+}
+

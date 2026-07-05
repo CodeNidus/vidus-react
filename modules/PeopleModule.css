@@ -1,0 +1,65 @@
+#people-module .module-box-interface .people {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#people-module .module-box-interface .user-item {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+#people-module .module-box-interface .dropdown-dots {
+  cursor: pointer;
+}
+
+#people-module .module-box-interface .dropdown-content {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 150px;
+  display: none;
+  z-index: 1000;
+}
+
+#people-module .module-box-interface .dropdown-content.show {
+  display: block;
+}
+
+#people-module .module-box-interface .dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#people-module .module-box-interface .dropdown-content li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+#people-module .module-box-interface .waitingList {
+  margin-top: 15px;
+}
+
+#people-module .module-box-interface .waitingList-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#people-module .module-box-interface .waitingList-item .btn {
+  font-size: 0.9em;
+  padding: 5px 10px;
+  margin: 0 2px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+

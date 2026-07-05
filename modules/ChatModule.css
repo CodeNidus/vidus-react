@@ -1,0 +1,109 @@
+#chat-module .module-box-interface .messages {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  flex: 1;
+  max-height: calc(100vh - 200px);
+}
+
+#chat-module .module-box-interface .message-item {
+  color: #333;
+  margin: 10px 0;
+}
+
+#chat-module .module-box-interface .message-item:first-child {
+  margin-top: 0;
+}
+
+#chat-module .module-box-interface .message-item span {
+  font-size: 0.9em;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+#chat-module .module-box-interface .message-item small {
+  color: #777;
+  font-size: 0.8em;
+}
+
+#chat-module .module-box-interface .message-item p {
+  margin: 0;
+}
+
+#chat-module .module-box-interface .user-send {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-module .module-box-interface .user-send select {
+  position: absolute;
+  right: 0;
+  min-width: 60px;
+  cursor: pointer;
+  text-align: right;
+  font-weight: bold;
+  border: 0;
+  background: none;
+  appearance: none;
+  outline: none;
+  box-shadow: unset;
+}
+
+#chat-module .module-box-interface .user-send select option {
+  text-align: left;
+}
+
+#chat-module .module-box-interface .user-send textarea {
+  padding: 5px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#chat-module .module-box-interface .user-send button.send-btn {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#chat-module .module-box-interface .user-send button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 480px) {
+  #chat-module .module-box-interface .user-send button.send-btn {
+    /* margin-bottom: 50px; */
+  }
+}
+
+#chat-module .module-box-interface .user-send .emojies-box {
+  position: absolute;
+  z-index: 1;
+  bottom: 105px;
+  display: none;
+}
+
+#chat-module .module-box-interface .user-send .emojies-box.show {
+  display: block;
+}
+
+#chat-module .module-box-interface .user-send .emojies-box .EmojiPickerReact {
+  width: auto!important;
+}
+
+#chat-module .module-box-interface .user-send .emojies-box .EmojiPickerReact button:hover {
+  background: revert-rule!important;
+}
+
+
+#chat-module .module-box-interface .user-send .emojies-toggler {
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+}
+

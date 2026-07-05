@@ -1,0 +1,53 @@
+.command-deck {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  background: #262626;
+}
+
+.command-deck .deck-btn {
+  padding: 10px;
+}
+
+.command-deck .deck-btn .btn {
+  border: 0;
+}
+
+.command-deck .deck-btn .btn.btn-action {
+  padding: 8px 12px;
+}
+
+@media screen and (max-width: 480px) {
+  .command-deck .deck-btn .btn.btn-action {
+    padding: 8px 8px;
+  }
+
+  .command-deck .deck-btn .btn.btn-action svg {
+    display: flex;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.command-deck .deck-btn .btn-danger {
+  background: #EF4444;
+}
+
+.command-deck .deck-btn .btn-default {
+  color: #464546;
+  background: #cccccc;
+}
+
+.command-deck .deck-btn .btn-default:hover {
+  color: #161616;
+}
+
+.command-deck .deck-btn .btn-default:disabled,
+.command-deck .deck-btn .btn-default.disabled {
+  color: #cccccc;
+  background: #3c4043;
+}

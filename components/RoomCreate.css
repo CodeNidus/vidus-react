@@ -1,0 +1,23 @@
+#room-register {
+  width: 380px;
+  display: inline-block;
+  padding: 20px 50px;
+}
+
+@media (max-width: 768px) {
+  #room-register {
+    width: unset;
+    margin: 0 0 50px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #room-register {
+    padding: 20px;
+  }
+}
+
+#room-register div {
+  margin-bottom: 20px;
+}
+

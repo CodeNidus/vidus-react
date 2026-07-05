@@ -1,0 +1,313 @@
+#video-meeting {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 60px 20px;
+  gap: 20px;
+}
+
+#video-meeting #video-conference-room {
+  position: relative;
+  display: flex;
+  flex: 1;
+  border-radius: 10px;
+  gap: 20px;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room {
+    flex-direction: column;
+  }
+}
+
+#video-meeting #video-conference-room #area-switcher {
+  position: absolute;
+  z-index: 1000;
+  bottom: 25px;
+  right: 0;
+}
+
+#video-meeting #video-conference-room.with-canvas #modules-area,
+#video-meeting #video-conference-room.with-screen-share #modules-area {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room.with-canvas #users-area,
+  #video-meeting #video-conference-room.with-screen-share #users-area {
+    align-items: flex-start !important;
+  }
+}
+
+#video-meeting #video-conference-room.with-canvas #users-area #video-conference-users,
+#video-meeting #video-conference-room.with-screen-share #users-area #video-conference-users {
+  align-content: flex-start !important;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room.with-canvas #users-area #video-conference-users,
+  #video-meeting #video-conference-room.with-screen-share #users-area #video-conference-users {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+  }
+}
+
+#video-meeting #video-conference-room.with-canvas.with-screen-share #users-area #video-conference-users {
+  align-content: flex-start !important;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room.with-canvas.with-screen-share #users-area #video-conference-users {
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+  }
+}
+
+#video-meeting #video-conference-room #modules-area {
+  width: auto;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room #modules-area {
+    width: unset;
+  }
+}
+
+#video-meeting #video-conference-room #modules-area #screen-sharing {
+  flex: 2;
+  width: 60vw;
+  background: #000;
+  opacity: 0.8;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room #modules-area #screen-sharing {
+    width: unset;
+  }
+}
+
+#video-meeting #video-conference-room #modules-area #screen-sharing video {
+  padding: 15px 0;
+}
+
+#video-meeting #video-conference-room #modules-area #canvas-module {
+  width: 60vw;
+  background: #E2E8F0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room #modules-area #canvas-module {
+    width: unset;
+  }
+}
+
+#video-meeting #video-conference-room #modules-area #canvas-module canvas {
+  width: 100%;
+}
+
+#video-meeting #video-conference-room #users-area {
+  display: flex;
+  flex: 1;
+  width: 33vw;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room #users-area {
+    width: unset;
+    overflow: scroll;
+  }
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users {
+  overflow: scroll;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 960px) {
+  #video-meeting #video-conference-room #users-area #video-conference-users {
+    align-content: flex-start !important;
+  }
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item {
+  position: relative;
+  vertical-align: middle;
+  align-self: center;
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+  animation: show 0.4s ease;
+  background: #333;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item.room-creator {
+  order: 1;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item.current-user {
+  order: 2;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item.room-user {
+  order: 3;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item:hover:after {
+  content: ' ';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.3;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item:hover .microphone-mute,
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item:hover .microphone-unmute,
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item:hover .user-footer-actions {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room #users-area #video-conference-users .user-item {
+    flex: 0 0 auto;
+  }
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .user-name {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 10px;
+  overflow: hidden;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .user-name span {
+  position: relative;
+  z-index: 1;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .user-name:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.6;
+  background: #000;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .user-footer-actions {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  right: 15px;
+  bottom: 15px;
+  color: #fff;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .user-footer-actions .action-item {
+  cursor: pointer;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .microphone-mute {
+  position: absolute;
+  z-index: 5;
+  display: none;
+  color: #fff;
+  top: 25px;
+  right: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room #users-area #video-conference-users .user-item .microphone-mute {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .microphone-mute svg {
+  width: 32px;
+  height: 32px;
+}
+
+@media only screen and (max-width: 600px) {
+  #video-meeting #video-conference-room #users-area #video-conference-users .user-item .microphone-mute svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .microphone-unmute {
+  position: absolute;
+  z-index: 5;
+  display: none;
+  color: #fff;
+  cursor: pointer;
+  bottom: 25px;
+  right: 25px;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .user-video video {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .user-video .camera-mute {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: #333;
+}
+
+#video-meeting #video-conference-room #users-area #video-conference-users .user-item .user-video canvas {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

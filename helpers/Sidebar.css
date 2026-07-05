@@ -1,0 +1,47 @@
+.module .module-box {
+  background: var(--white);
+  border: 1px solid var(--slate-100);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1);
+}
+
+.module .module-box.sidebar {
+  position: fixed;
+  flex-direction: column;
+  display: flex;
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 350px;
+}
+
+.module .module-box.sidebar .module-box-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.module .module-box.sidebar .module-box-heading .close {
+  cursor: pointer;
+}
+
+.module .module-box .module-box-interface {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  padding: 10px;
+}
+
+.module .module-back {
+  position: fixed;
+  z-index: 999998;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--black);
+  opacity: 0.6;
+}

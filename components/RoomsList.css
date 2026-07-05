@@ -1,0 +1,45 @@
+#rooms-list {
+  width: 100%;
+  padding: 20px 50px;
+}
+
+@media (max-width: 768px) {
+  #rooms-list {
+    width: unset;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #rooms-list {
+    padding: 20px;
+  }
+}
+
+#rooms-list .rooms-list-table {
+  text-align: left;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  #rooms-list .rooms-list-table div {
+    overflow: scroll;
+  }
+}
+
+#rooms-list .rooms-list-table div table {
+  width: 100%;
+  margin-top: 15px;
+}
+
+#rooms-list .rooms-list-table div table .share-room {
+  display: flex;
+}
+
+@media (max-width: 480px) {
+  #rooms-list .rooms-list-table div table .share-room a {
+    display: flex;
+    padding: 2px 5px;
+    width: 20px;
+  }
+}

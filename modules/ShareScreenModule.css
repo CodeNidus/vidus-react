@@ -1,0 +1,50 @@
+#screen-sharing {
+  position: relative !important;
+}
+
+#screen-sharing.screen-sharing-hidden {
+  display: none;
+}
+
+#screen-sharing #screen-sharing-area {
+  position: relative;
+  height: 100%;
+  padding: 0 15px;
+}
+
+#screen-sharing #screen-sharing-area .screen-share-full-screen {
+  display: none;
+}
+
+#screen-sharing #screen-sharing-area:hover .screen-share-full-screen {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  cursor: pointer;
+}
+
+#screen-sharing #screen-sharing-area:hover .screen-share-full-screen svg {
+  z-index: 2;
+}
+
+#screen-sharing #screen-sharing-area:hover .screen-share-full-screen .screen-share-full-screen-background {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.3;
+}
+
+#screen-sharing #screen-sharing-area video {
+  width: 100%;
+}

@@ -1,0 +1,47 @@
+#recording-screen {
+  position: relative !important;
+  animation: pulse 4s infinite;
+}
+
+#recording-screen #screen-record-control {
+  position: relative;
+  display: flex;
+  padding: 0 15px;
+  gap: 5px;
+  align-items: center;
+}
+
+#recording-screen #screen-record-control .recording-icon {
+  width: 10px;
+  height: 10px;
+  background: red;
+  border: 5px solid red;
+  border-radius: 50%;
+}
+
+#recording-screen #screen-record-control .recording-text {
+  width: 100px;
+  font-weight: bold;
+  overflow: hidden;
+  transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#recording-screen #screen-record-control .recording-text.hide {
+  width: 0;
+}
+
+#recording-screen #screen-record-control:hover .recording-text {
+  width: 100px !important;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
