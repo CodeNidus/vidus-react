@@ -295,11 +295,16 @@ const VideoConference = React.forwardRef(({
         <ChatModule
           ref={(obj) => { modulesRef.current['chat'] = obj; }}
           webrtc={webrtc}
+          connections={connections}
+          setUserSettings={setUserSettings}
         />
         <PeopleModule
           ref={(obj) => { modulesRef.current['people'] = obj; }}
           webrtc={webrtc}
+          connections={connections}
           waitingList={waitingList}
+          setUserSettings={setUserSettings}
+
         />
         <RecordScreenModule
           ref={(obj) => { modulesRef.current['record'] = obj; }}

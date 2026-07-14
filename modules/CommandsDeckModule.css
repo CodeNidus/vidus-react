@@ -42,6 +42,27 @@
   background: #cccccc;
 }
 
+.command-deck .deck-btn .btn-default.notify:after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: #EF4444;
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  top: -5px;
+  right: -5px;
+}
+
+@media screen and (max-width: 480px) {
+  .command-deck .deck-btn .btn-default.notify:after {
+    width: 8px;
+    height: 8px;
+    top: -2px;
+    right: -2px;
+  }
+}
+
 .command-deck .deck-btn .btn-default:hover {
   color: #161616;
 }

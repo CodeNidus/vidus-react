@@ -5,7 +5,7 @@ import beepAudio from '../assets/audio/beep.mp3';
 import EmojiPicker from 'emoji-picker-react';
 import './ChatModule.css';
 
-const ChatModule = React.forwardRef(({ webrtc: webrtcProp }, ref) => {
+const ChatModule = React.forwardRef(({ webrtc: webrtcProp, connections, setUserSettings }, ref) => {
   const { webrtc: webrtcContext } = useVidus();
   const webrtc = webrtcProp || webrtcContext;
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,7 @@ const ChatModule = React.forwardRef(({ webrtc: webrtcProp }, ref) => {
     });
 
     return userList;
-  }, [webrtc]);
+  }, [webrtc, connections]);
 
   useEffect(() => {
     const receivedMessageAction = (e) => {
@@ -53,7 +53,10 @@ const ChatModule = React.forwardRef(({ webrtc: webrtcProp }, ref) => {
       }
 
       if (!isOpen) {
-        webrtc.userSettings.newMessage = true;
+        setUserSettings(prev => ({
+          ...prev,
+          newMessage: true,
+        }));
       }
     };
 
@@ -139,10 +142,15 @@ const ChatModule = React.forwardRef(({ webrtc: webrtcProp }, ref) => {
 
   const open = (roomData) => {
     setIsOpen(true);
+
     if (messagesBoxRef.current) {
       messagesBoxRef.current.scrollTop = messagesBoxRef.current.scrollHeight;
     }
-    webrtc.userSettings.newMessage = false;
+
+    setUserSettings(prev => ({
+      ...prev,
+      newMessage: false,
+    }));
   };
 
   // Expose open method

@@ -5,7 +5,7 @@ import Icon from '../helpers/Icon';
 import admitAudio from '../assets/audio/admit.mp3';
 import './PeopleModule.css';
 
-const PeopleModule = React.forwardRef(({ webrtc: webrtcProp, waitingList: waitingListProp = [] }, ref) => {
+const PeopleModule = React.forwardRef(({ webrtc: webrtcProp, connections, waitingList: waitingListProp = [], setUserSettings }, ref) => {
   const { webrtc: webrtcContext } = useVidus();
   const webrtc = webrtcProp || webrtcContext;
   const [isOpen, setIsOpen] = useState(false);
@@ -38,21 +38,28 @@ const PeopleModule = React.forwardRef(({ webrtc: webrtcProp, waitingList: waitin
     });
 
     setUsersMenu(menu);
-  }, [webrtc]);
+  }, [webrtc, connections]);
 
   useEffect(() => {
     const eventHandlerRequestToAdmit = () => {
       if (audioRef.current) {
         audioRef.current.play();
       }
+
       if (!isOpen) {
-        webrtc.userSettings.newAdmitRequest = true;
+        setUserSettings(prev => ({
+          ...prev,
+          newAdmitRequest: true
+        }));
       }
     };
 
     const eventHandlerCancelForAdmit = () => {
       if (waitingList.length === 0) {
-        webrtc.userSettings.newAdmitRequest = false;
+        setUserSettings(prev => ({
+          ...prev,
+          newAdmitRequest: false
+        }));
       }
     };
 
@@ -109,7 +116,10 @@ const PeopleModule = React.forwardRef(({ webrtc: webrtcProp, waitingList: waitin
   const open = (roomItem) => {
     setIsOpen(true);
     setRoom(roomItem);
-    webrtc.userSettings.newAdmitRequest = false;
+    setUserSettings(prev => ({
+      ...prev,
+      newAdmitRequest: false
+    }));
   };
 
   React.useImperativeHandle(ref, () => ({ open }));
@@ -126,12 +136,16 @@ const PeopleModule = React.forwardRef(({ webrtc: webrtcProp, waitingList: waitin
           <div key={index} className="user-item">
             <span>{user.name}</span>
             {index > 0 && (
-              <div>
-                <Icon
-                  icon="dots-vertical"
-                  className="dropdown-dots"
-                  onClick={() => toggleMenu(index)}
-                />
+                <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleMenu(index);
+                    }}
+                >
+                  <Icon
+                      icon="dots-vertical"
+                      className="dropdown-dots"
+                  />
                 {user.openMenu && (
                   <div className="dropdown-content show">
                     <h3>{user.name}</h3>

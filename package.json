@@ -1,10 +1,10 @@
 {
   "name": "vidus-react",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "@mdi/svg": "^7.4.47",
-    "vidus-core": "^1.1.0",
-    "emoji-picker-react": "^4.16.1"
+    "emoji-picker-react": "^4.16.1",
+    "vidus-core": "^1.1.1"
   },
   "description": "Vidus video conference react package",
   "main": "index.jsx",
@@ -17,5 +17,8 @@
     "react"
   ],
   "author": "Code Nidus",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "vite-plugin-commonjs": "^0.10.4"
+  }
 }
